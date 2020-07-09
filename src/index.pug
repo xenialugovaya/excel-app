@@ -1,15 +1,27 @@
 include ./header/header.pug
+include ./toolbar/toolbar.pug
 
 doctype html
 head
   meta(charset='UTF-8')
-  meta(name='viewport', content='width=device-width, initial-scale=1.0')
-  link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
   title Excel
 body
   .container#app
     .excel
       .excel__header
         +header()
-        
-      
+      .excel__toolbar
+        +toolbar({
+          buttons: [
+            'format_align_left', 
+            'format_align_center',
+            'format_align_right', 
+            'format_bold', 
+            'format_italic', 
+            'format_underline'
+            ]
+        })
+
+
