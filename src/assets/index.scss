@@ -1,0 +1,20 @@
+@import "~normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$mainFont: 'Roboto', sans-serif;
+$mainFontSize: 12px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: $mainFont;
+    font-size: $mainFontSize;
+}
+
+.excel{
+    position: relative;
+}

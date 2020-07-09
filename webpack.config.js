@@ -34,13 +34,14 @@ module.exports = {
   },
   devtool: isDev ? 'source-map' : false,
   devServer: {
+    watchContentBase: true,
     port: 8082,
     hot: isDev,
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
-      template: 'index.html',
+      template: 'index.pug',
       minify: isProd,
     }),
     new MiniCssExtractPlugin({
@@ -48,25 +49,30 @@ module.exports = {
     }),
   ],
   module: {
-    rules: [{
-      test: /\.s[ac]ss$/i,
-      use: [{
-        loader: MiniCssExtractPlugin.loader,
-        options: {
-          hmr: isDev,
-          reloadAll: true,
+    rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        use: [{
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            hmr: isDev,
+            reloadAll: true,
+          },
         },
+        'css-loader',
+        'sass-loader',
+        ],
       },
-      'css-loader',
-      'sass-loader',
-      ],
-    },
-    {
-      test: /\.js$/,
-      exclude: /node-modules/,
-      use: jsLoaders(),
-    },
-
+      {
+        test: /\.js$/,
+        exclude: /node-modules/,
+        use: jsLoaders(),
+      },
+      {
+        test: /\.pug$/,
+        exclude: /node-modules/,
+        use: 'pug-loader',
+      },
     ],
   },
 };
