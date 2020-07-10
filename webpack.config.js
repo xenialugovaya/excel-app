@@ -1,5 +1,7 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {
+  CleanWebpackPlugin,
+} = require('clean-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -7,14 +9,12 @@ const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;
 
 const jsLoaders = () => {
-  const loaders = [
-    {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env'],
-      },
+  const loaders = [{
+    loader: 'babel-loader',
+    options: {
+      presets: ['@babel/preset-env'],
     },
-  ];
+  }];
   if (isDev) {
     loaders.push('eslint-loader');
   }
@@ -31,6 +31,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js'],
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+      '@core': path.resolve(__dirname, 'src/core'),
+    },
   },
   devtool: isDev ? 'source-map' : false,
   devServer: {
@@ -49,18 +53,17 @@ module.exports = {
     }),
   ],
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.s[ac]ss$/i,
         use: [{
-          loader: MiniCssExtractPlugin.loader,
-          options: {
-            hmr: isDev,
-            reloadAll: true,
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: isDev,
+              reloadAll: true,
+            },
           },
-        },
-        'css-loader',
-        'sass-loader',
+          'css-loader',
+          'sass-loader',
         ],
       },
       {
