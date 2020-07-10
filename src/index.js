@@ -1,3 +1,5 @@
-import './index.scss';
+function requireAll(requireContext) {
+  return requireContext.keys().map(requireContext);
+}
 
-// console.log('Hello n');
+requireAll(require.context('/', true, /\.(scss|js)$/));

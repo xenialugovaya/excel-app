@@ -1,0 +1,20 @@
+mixin table()
+  .table
+    .table__row.table__row_main
+      .table__row-info
+      .table__row-data
+        .table__column= "A"
+        .table__column= "B"
+        .table__column= "C"
+    .table__row
+      .table__row-info= 1
+      .table__row-data
+        .table__cell(contenteditable).table__cell_selected= ""
+        .table__cell(contenteditable)= ""
+        .table__cell(contenteditable)= ""
+    .table__row
+      .table__row-info= 2
+      .table__row-data
+        .table__cell.table__cell_selected= ""
+        .table__cell= ""
+        .table__cell= ""

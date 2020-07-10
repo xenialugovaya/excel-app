@@ -1,0 +1,15 @@
+mixin dashboard()
+  .dashboard
+    .dashboard__header
+      h1 Excel
+    .dashboard__new-excel
+      .dashboard__view
+        a(href="#").dashboard__add-button Hoвая Таблица
+    .dashboard__table
+      .dashboard__list-header
+        span Название
+        span Дата открытия
+      ul.dashboard__list
+        li.dashboard__record
+          a(href="#")= "Таблица 1"
+          strong 12.06.2020
