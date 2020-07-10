@@ -1,6 +1,7 @@
 include ./header/header.pug
 include ./toolbar/toolbar.pug
 include ./formula/formula.pug
+include ./table/table.pug
 
 doctype html
 head
@@ -26,5 +27,7 @@ body
         })
       .excel__formula
         +formula()
+      .excel__table
+        +table()
 
 
