@@ -1,7 +1,5 @@
-include ./header/header.pug
-include ./toolbar/toolbar.pug
-include ./formula/formula.pug
-include ./table/table.pug
+include ./excel/excel.pug
+include ./dashboard/dashboard.pug
 
 doctype html
 head
@@ -11,23 +9,7 @@ head
   title Excel
 body
   .container#app
-    .excel
-      .excel__header
-        +header()
-      .excel__toolbar
-        +toolbar({
-          buttons: [
-            'format_align_left', 
-            'format_align_center',
-            'format_align_right', 
-            'format_bold', 
-            'format_italic', 
-            'format_underline'
-            ]
-        })
-      .excel__formula
-        +formula()
-      .excel__table
-        +table()
+    +dashboard()
+
 
 
