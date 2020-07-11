@@ -2,12 +2,11 @@
 @import "../assets/mixins";
 
 .header {
-  height: $header-height;
   width: 100%;
-  padding: 8px 4px 0;
-  position: fixed;
+  height: 100%;
   display: flex;
   justify-content: space-between;
+  padding: 8px 4px 0;
 
   &__input {
     margin: 0;

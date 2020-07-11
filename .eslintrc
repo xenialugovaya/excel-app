@@ -10,7 +10,10 @@
   },
   "rules": {
     "indent": ["error", 2],
-    "eol-last": "off"
+    "eol-last": "off",
+    "class-methods-use-this": "off",
+    "import/no-unresolved": "off",
+    "no-plusplus": "off"
   },
   "extends": ["airbnb-base"]
 }
