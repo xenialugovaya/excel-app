@@ -13,6 +13,7 @@ const jsLoaders = () => {
     loader: 'babel-loader',
     options: {
       presets: ['@babel/preset-env'],
+      plugins: ['@babel/plugin-proposal-class-properties'],
     },
   }];
   if (isDev) {
@@ -32,8 +33,7 @@ module.exports = {
   resolve: {
     extensions: ['.js'],
     alias: {
-      '@': path.resolve(__dirname, 'src'),
-      '@core': path.resolve(__dirname, 'src/core'),
+      core: path.resolve(__dirname, 'src/core/'),
     },
   },
   devtool: isDev ? 'source-map' : false,
