@@ -13,7 +13,10 @@
     "eol-last": "off",
     "class-methods-use-this": "off",
     "import/no-unresolved": "off",
-    "no-plusplus": "off"
+    "no-plusplus": "off",
+    "no-use-before-define": "warn",
+    "no-unused-vars": "warn",
+    "no-param-reassign": "warn"
   },
   "extends": ["airbnb-base"]
 }
