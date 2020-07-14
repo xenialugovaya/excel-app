@@ -12,7 +12,7 @@
     "indent": ["error", 2],
     "eol-last": "off",
     "class-methods-use-this": "off",
-    "import/no-unresolved": "off",
+    "import/no-unresolved": "warn",
     "no-plusplus": "off",
     "no-use-before-define": "warn",
     "no-unused-vars": "warn",
